@@ -1,0 +1,18 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Resources:
+  MyFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      PackageType: Image
+      # ImageUri: lambda-container::latest
+      Events:
+        Api:
+          Type: Api
+          Properties:
+            Path: /hello
+            Method: get
+    Metadata:
+      DockerContext: ./app
+      Dockerfile: Dockerfile
+      DockerTag: latest
