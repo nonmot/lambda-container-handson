@@ -5,7 +5,9 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       PackageType: Image
-      # ImageUri: lambda-container::latest
+      Timeout: 10
+      MemorySize: 512
+      Architectures: [arm64]
       Events:
         Api:
           Type: Api

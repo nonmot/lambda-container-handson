@@ -7,10 +7,10 @@
     "lib": "lib"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
     "build": "tsc -p tsconfig.json",
     "watch": "tsc -w -p tsconfig.json",
     "synth": "cdk synth",
+    "deploy": "cdk deploy"
   },
   "keywords": [],
   "author": "",

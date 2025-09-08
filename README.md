@@ -6,13 +6,21 @@ Handson for container-based Lambda
 - aws-sam-cli
 - Docker
 
-## 実行方法
+## ローカルでのテスト
 
 ```shell
-docker build -t lambda-container .
-docker run -p 9000:8080 lambda-container
-curl -X POST http://localhost:9000/2015-03-31/functions/function/invocations -d '{}'
-# {"statusCode":200,"body":"{\"message\":\"Hello from Lamnda Container\",\"event\":{}}"}
+sam build
+sam local start-api
+curl http://localhost:3000/hello
+```
+
+
+## Lambdaへデプロイ
+
+```shell
+cd cdk
+cdk bootstrap
+cdk deploy
 ```
 
 ## References
